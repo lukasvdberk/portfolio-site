@@ -9,7 +9,7 @@ colorama==0.4.3
 contextlib2==0.6.0.post1
 distlib==0.3.0
 distro==1.5.0
-Django==3.0.6
+Django==3.0.7
 djangorestframework==3.11.0
 docutils==0.16
 gunicorn==20.0.4
