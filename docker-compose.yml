@@ -1,0 +1,59 @@
+version: '3'
+
+services:
+  django_db:
+    container_name: personal_site-django-db
+    restart: always
+    image: mysql:5.7
+    expose:
+      - "3306"
+    ports:
+      - "3306:3306"
+    networks:
+      - base
+    env_file: .env
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+
+  django-app:
+    container_name: personal-site-django-app
+    restart: always
+    build: .
+    links:
+      - django_db
+    command: sh ./startup.sh
+    env_file: .env
+    networks:
+      - base
+    volumes:
+      - .personal_site:/personal_site
+      - web-static:/personal_site/static
+      - media:/personal_site/media
+    ports:
+      - "8000:8000"
+
+  nginx:
+    container_name: familyfridge-nginx
+    restart: always
+    build: ./nginx/
+    expose:
+      - "80"
+    ports:
+      - "80:80"
+    volumes:
+      - web-static:/www/static
+      - media:/www/media
+    links:
+      - django-app:django-app
+    depends_on:
+      - django-app
+    networks:
+      - base
+
+networks:
+  base:
+
+volumes:
+  web-static:
+  media:
+
