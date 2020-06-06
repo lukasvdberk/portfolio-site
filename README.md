@@ -1,6 +1,7 @@
-#About
+### About
 TODO fill about
-#Installtion 
+
+### Installtion 
 Make sure you add a .env file with the following content.
 ```env
 MYSQL_DATABASE=familyfridge_app
