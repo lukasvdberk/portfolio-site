@@ -4,10 +4,10 @@ TODO fill about
 ### Installtion 
 Make sure you add a .env file with the following content.
 ```env
-MYSQL_DATABASE=familyfridge_app
-MYSQL_ROOT_PASSWORD=3,Wz])AtWHVHh6W?
-MYSQL_USER=django
-MYSQL_PASSWORD=3,Wz])AtWHVHh6W?
+MYSQL_DATABASE=db_name
+MYSQL_ROOT_PASSWORD=password
+MYSQL_USER=user
+MYSQL_PASSWORD=password
 IS_LIVE=false
 ```
 To run this project make sure docker and docker-compose is installed.
