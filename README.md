@@ -1,7 +1,7 @@
 ### About
 TODO fill about
 
-### Installtion 
+### Installation 
 Make sure you add a .env file with the following content.
 ```env
 MYSQL_DATABASE=db_name
