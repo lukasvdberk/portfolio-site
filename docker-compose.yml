@@ -44,7 +44,7 @@ services:
       - web-static:/www/static
       - media:/www/media
     links:
-      - django-app:django-app
+      - django-app
     depends_on:
       - django-app
     networks:

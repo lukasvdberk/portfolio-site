@@ -1,10 +1,9 @@
 #!/bin/bash
 
 /usr/local/bin/python manage.py makemigrations
-/usr/local/bin/python manage.py makemigrations familyfridge
 /usr/local/bin/python manage.py migrate
-/usr/local/bin/python manage.py migrate familyfridge
-/usr/local/bin/python manage.py loaddata config.json
+/usr/local/bin/python manage.py makemigrations projects
+/usr/local/bin/python manage.py migrate projects
 /usr/local/bin/python manage.py collectstatic --no-input
 
 
