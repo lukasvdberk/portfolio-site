@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  django_db:
+  django-db:
     container_name: personal_site-django-db
     restart: always
     image: mysql:5.7
@@ -18,22 +18,22 @@ services:
   django-app:
     container_name: personal-site-django-app
     restart: always
-    build: .
+    build: ./personal_site
     links:
-      - django_db
+      - django-db
     command: sh ./startup.sh
     env_file: .env
     networks:
       - base
     volumes:
-      - .personal_site:/personal_site
-      - web-static:/personal_site/static
-      - media:/personal_site/media
+      - ./personal_site:/personal_site_app
+      - web-static:/personal_site_app/static
+      - media:/personal_site_app/media
     ports:
       - "8000:8000"
 
   nginx:
-    container_name: familyfridge-nginx
+    container_name: personal_site-nginx
     restart: always
     build: ./nginx/
     expose:
