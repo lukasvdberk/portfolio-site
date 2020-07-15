@@ -1,0 +1,35 @@
+<script>
+    import ProjectCard from "./ProjectsCard.svelte"
+2
+    export let projects
+</script>
+
+<style>
+    div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 25px;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        div {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media only screen and (max-width: 800px) {
+        div {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div>
+    {#each projects as project}
+        <ProjectCard
+            title={project.name}
+            shortDescription={project.short_description}
+            images={project.images}
+            tags={project.tags}
+        />
+    {/each}
+</div>

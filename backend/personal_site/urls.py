@@ -17,14 +17,17 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.urls import path, include
+from markdownx import urls as markdownx
 
 from personal_site import settings
 
 urlpatterns = [
     url(r'^api/projects/', include('projects.urls')),
-    path('admin/', admin.site.urls),
+    url(r'^api/about_tags/', include('about_tags.urls')),
+    url(r'^markdownx/', include('markdownx.urls')),
+    path('api/admin/', admin.site.urls),
 ]
 
 
-if settings.DEBUG is True:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG is True:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

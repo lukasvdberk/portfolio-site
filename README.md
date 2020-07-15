@@ -15,4 +15,4 @@ Simple then run
 ```bash
 # docker-compose up --build
 ```
-The b flag is for building and is only needed the first time.
+The build flag is for building and is only needed the first time.

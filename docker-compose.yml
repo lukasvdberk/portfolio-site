@@ -2,7 +2,7 @@ version: '3'
 
 services:
   django-db:
-    container_name: personal_site-django-db
+    container_name: backend-django-db
     restart: always
     image: mysql:5.7
     expose:
@@ -16,9 +16,9 @@ services:
       - ./mysql-data:/var/lib/mysql
 
   django-app:
-    container_name: personal-site-django-app
+    container_name: backend-django-app
     restart: always
-    build: ./personal_site
+    build: backend
     links:
       - django-db
     command: sh ./startup.sh
@@ -26,16 +26,29 @@ services:
     networks:
       - base
     volumes:
-      - ./personal_site:/personal_site_app
+      - ./backend:/personal_site_app
       - web-static:/personal_site_app/static
       - media:/personal_site_app/media
     ports:
       - "8000:8000"
-
-  nginx:
-    container_name: personal_site-nginx
+  svelte-app:
+    container_name: frond-end-svelte
     restart: always
-    build: ./nginx/
+    build: front-end
+    links:
+      - django-app
+    command: sh ./startup.sh
+    env_file: .env
+    networks:
+      - base
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./front-end:/front-end/
+  nginx:
+    container_name: nginx
+    restart: always
+    build: nginx
     expose:
       - "80"
     ports:

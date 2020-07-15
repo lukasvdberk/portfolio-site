@@ -51,7 +51,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'projects.apps.ProjectsConfig',
-    'rest_framework'
+    'about_tags.apps.AboutTagsConfig',
+    'django_filters',
+    'rest_framework',
+    'markdownx'
 ]
 
 MIDDLEWARE = [
@@ -94,7 +97,7 @@ DATABASES = {
         'NAME': os.environ['MYSQL_DATABASE'],
         'USER': os.environ['MYSQL_USER'],
         'PASSWORD': os.environ['MYSQL_PASSWORD'],
-        'HOST': 'personal_site-django-db',  # Or an IP Address that your DB is hosted on
+        'HOST': 'backend-django-db',  # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
@@ -149,5 +152,8 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
     ]
 }
