@@ -1,7 +1,7 @@
 <script>
-    import ProjectCard from "./ProjectsCard.svelte"
-2
-    export let projects
+    import ProjectCard from "./ProjectsCard.svelte";
+
+    export let projects;
 </script>
 
 <style>
@@ -29,6 +29,7 @@
             title={project.name}
             shortDescription={project.short_description}
             images={project.images}
+            slug={project.slug}
             tags={project.tags}
         />
     {/each}

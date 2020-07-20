@@ -5,6 +5,7 @@
     export let images
     export let title
     export let shortDescription
+    export let slug;
     export let tags = undefined;
 </script>
 
@@ -60,5 +61,5 @@
         </div>
     {/each}
     <p>{shortDescription}</p>
-    <a href="youtube.com">Learn more</a>
+    <a href="/projects/{slug}">Learn more</a>
 </article>
