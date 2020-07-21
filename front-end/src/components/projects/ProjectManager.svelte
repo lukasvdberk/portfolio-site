@@ -25,7 +25,6 @@
 </script>
 
 {#if projects !== undefined}
-	<!--TODO style the select-->
 	<form on:submit|preventDefault={setSize}>
 		<label>
 			Filter by project size:
@@ -38,6 +37,5 @@
 	</form>
 	<ProjectCardList {projects} />
 {:else}
-    <!-- TODO add loading animation -->
     <p>Please stand by projects loading......</p>
 {/if}

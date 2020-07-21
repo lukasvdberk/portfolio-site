@@ -52,7 +52,7 @@ services:
     expose:
       - "80"
     ports:
-      - "80:80"
+      - "0.0.0.0:80:80"
     volumes:
       - web-static:/www/static
       - media:/www/media

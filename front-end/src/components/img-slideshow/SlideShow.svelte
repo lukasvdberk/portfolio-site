@@ -1,5 +1,5 @@
 <script>
-    import Img from "../standard/StandardImage.svelte";
+    import Img from "../common/StandardImage.svelte";
     import {onDestroy} from 'svelte';
 
     // Should be a list of links

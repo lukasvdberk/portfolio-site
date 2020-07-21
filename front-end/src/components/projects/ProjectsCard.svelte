@@ -1,5 +1,5 @@
 <script>
-    import Img from "../standard/StandardImage.svelte"
+    import Img from "../common/StandardImage.svelte"
     import Tag from "../common/Tag.svelte"
 
     export let images

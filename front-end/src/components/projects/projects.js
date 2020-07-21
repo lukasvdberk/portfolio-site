@@ -6,10 +6,11 @@ let fetchData = {
     credentials: 'same-origin'
 }
 
-export async function fetchProject(slug, context) {
-    // context is for sapper preloading pass none if not used.
+export async function fetchProject(slug) {
+    // context is for sapper preloading pass undefined if not used.
 
     //Retrieves a specific project by slug
+    // this is okay since it will always run on the same host
     let url = base_url;
 
     // If there is a size specified we want to search for it.
@@ -18,13 +19,8 @@ export async function fetchProject(slug, context) {
     }
 
     // Fetching the projects
-    let res = undefined;
-    if(context !== undefined) {
-        res = await context.fetch(url, fetchData);
-    }
-    else {
-        res = await fetch(url, fetchData);
-    }
+    const res = await fetch(url, fetchData);
+
     const projectList = await res.json();
 
     if (projectList.length === 0){
@@ -39,7 +35,7 @@ export async function fetchProjects(projectSize=undefined) {
 
     let url = base_url;
     // If there is a size specified we want to search for it.
-    if(projectSize !== undefined) {
+    if(projectSize !== undefined && projectSize !== "ALL") {
         url += `?size=${projectSize}`
     }
 
@@ -61,6 +57,10 @@ export function getSize() {
 		{
 			name: "Small",
 			value: "SMALL"
+		},
+        {
+			name: "All",
+			value: "ALL"
 		}
 	]
 }
