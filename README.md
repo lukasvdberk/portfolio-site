@@ -13,7 +13,7 @@ Technology used for this project
 You may ask is docker and a seperate backend a bit overkill? Yes but I wanted this site to be easily maintainable and a little demo of what kinds of technologies I can use and how I would use them.
 
 ### Installation 
-Make sure you add a .env file with the following content.
+Make sure you add a .env file with the following content at the root of the project.
 ```env
 MYSQL_DATABASE=db_name
 MYSQL_ROOT_PASSWORD=password
@@ -22,7 +22,7 @@ MYSQL_PASSWORD=password
 IS_LIVE=false
 ```
 To run this project make sure docker and docker-compose is installed.
-Simple then run
+Simply then run
 ```bash
 docker-compose up --build
 ```
