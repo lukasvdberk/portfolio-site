@@ -98,7 +98,6 @@
     <div class="center">
         <!--  Shows the little dots for the available images  -->
         {#each images as image }
-            <!--TODO add onclick-->
             {#if image === currentImage}
                 <span class="current-image" on:click={() => setImage(image)}></span>
             {:else}
