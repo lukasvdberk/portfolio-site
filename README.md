@@ -1,5 +1,5 @@
 ### About
-TODO fill about
+My (Lukas van den Berk) portfolio website. Currently hosted at lukashisprojects.rocks/
 
 ### Installation 
 Make sure you add a .env file with the following content.
