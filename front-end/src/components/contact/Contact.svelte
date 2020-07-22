@@ -3,30 +3,32 @@
 </script>
 
 <style>
-    a {
-        position: relative;
-        display: inline-block;
-        height: 5%;
-        margin-left: 5%;
-        text-decoration: none;
+    div.container {
+        display: block;
+        height: 40px;
+        width: 100%;
     }
 
-    a > * {
-        text-align: center;
-        height: 2.5%;
-        padding: 0;
-        margin: 0;
+    a {
+        display: inline-block;
+        position: relative;
+        margin-left: 2.5%;
+        font-size: 15px;
+        float: left;
     }
 
     img {
+        display: inline-block;
+        float:left;
+        height: 40px;
+        width: 40px;
+        margin-left: 10px;
         border-radius: 10%;
     }
-
-    .img-with-text {
-        text-align: justify;
-    }
 </style>
-<a class="img-with-text" href={contact.link}>
-    <img src={contact.img} alt={contact.name} />
-    <p>{contact.name}</p>
-</a>
+<div class="container">
+    <img src="{contact.img}" alt={contact.name} />
+    <div>
+        <a href="{contact.link}">Contact me at {contact.name}</a>
+    </div>
+</div>

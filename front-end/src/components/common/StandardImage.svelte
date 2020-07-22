@@ -8,8 +8,7 @@
         object-fit: scale-down;
         width: 100%;
         height: 100%;
-        border: solid transparent 5px;
-        border-radius: 10px;
+        border-radius: 5px;
     }
 </style>
 

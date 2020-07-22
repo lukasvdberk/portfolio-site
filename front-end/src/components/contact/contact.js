@@ -2,17 +2,17 @@ function getContacts() {
     const imgFolder = "/contact"
     return [
         {
-            name: "linkedin",
+            name: "Linkedin",
             img: `${imgFolder}/linkedin.svg`,
             link: "https://www.linkedin.com/in/lukas-van-den-berk-5b7681185/"
         },
         {
-            name: "github",
+            name: "Github",
             img: `${imgFolder}/github.svg`,
             link: "https://github.com/lukasvdberk"
         },
         {
-            name: "mail",
+            name: "Email",
             img: `${imgFolder}/mail.svg`,
             link: "mailto:lukasvdberk@gmail.com"
         },
