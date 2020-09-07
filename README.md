@@ -1,5 +1,5 @@
 ### About
-My (Lukas van den Berk) portfolio website. Currently hosted at https://lukashisprojects.rocks/
+My (Lukas van den Berk) portfolio website. Currently hosted at https://lukas.sh
 
 Technology used for this project
 
