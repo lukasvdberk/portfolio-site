@@ -3,7 +3,7 @@
 
     import getContactsInfo from "./contact.js"
 
-    const contactsInfo = getContactsInfo() 
+    const contactsInfo = getContactsInfo()
 </script>
 
 <style>
@@ -14,6 +14,7 @@
         margin-top: 2.5%;
     }
 </style>
+
 <h1>Contact me at</h1>
 {#each contactsInfo as contact}
     <div>

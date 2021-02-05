@@ -36,11 +36,12 @@ class TypeServer(Enum):
 
 is_live = os.environ['IS_LIVE']
 
+TYPE_SERVER = TypeServer.dev
 if is_live == 'true':
     TYPE_SERVER = TypeServer.live
-else:
-    TYPE_SERVER = TypeServer.dev
 
+if TYPE_SERVER.dev:
+    DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [

@@ -21,6 +21,10 @@
 		text-align: center;
 	}
 
+	.group-about {
+		height: 60vh;
+	}
+
 	.img {
 		display: block;
 		position: relative;
@@ -32,12 +36,8 @@
 		display: block;
 		position: relative;
 		width: 100%;
+		height: auto;
 	}
-
-	.img, .group {
-		height: 550px;
-	}
-
 
 	.spacing {
 		padding: 2%;
@@ -47,16 +47,13 @@
 	}
 
 	.about {
-		display: block;
 		position: relative;
-		float: right;
 		width: 65%;
+		float: right;
 	}
 
-	.end{
-		position: absolute;
-		right:    0;
-		bottom:   0;
+	.header-height {
+		height: 45vh;
 	}
 
 	.projects {
@@ -65,35 +62,17 @@
 		margin-top: 5%;
 	}
 
-	.profile-img-container {
-		display: block;
-	}
-
 	p, h2 {
 		padding: 1%;
-	}
-
-	.profile-img-container {
-		padding: 2.5%;
 	}
 
 	ul, li, p{
 		text-align: left;
 	}
 
-	@media (min-width: 800px) and (max-width: 1450px) {
-		.img {
-			width: 40%;
-		}
-		.about {
-			width: 55%;
-		}
-	}
-
 	.profile-img {
-		display: block;
+		height: 60%;
 	}
-
 
 	@media (max-width: 800px) {
 		.group {
@@ -104,10 +83,6 @@
 			display: none;
 		}
 
-		.img {
-			height: auto;
-		}
-
 		.group, .projects, .about, .img {
 			display: block;
 			position: relative;
@@ -115,23 +90,24 @@
 			float: none;
 			margin-top: 5%;
 		}
+
+		.header-height {
+			height: auto;
+		}
 	}
 </style>
 
 <svelte:head>
 	<title>Lukas portfolio</title>
-	<!--  Meta tags	-->
 	<meta name="title" content="Lukas portfolio">
 	<meta name="description" content="Lukas van den Berk a developer his portfolio site">
 	<meta property="og:type" content="website">
-	<!--  TODO update to lukas.sh	-->
-	<meta property="og:url" content="https://lukashisprojects.rocks">
+	<meta property="og:url" content="https://lukas.sh">
 	<meta property="og:title" content="Lukas portfolio">
 	<meta property="og:description" content="Lukas van den Berk a developer his portfolio site">
 	<meta property="og:image" content="/favicon.png">
 	<meta property="twitter:card" content="summary_large_image">
-	<!--  TODO update to lukas.sh	-->
-	<meta property="twitter:url" content="https://lukashisprojects.rocks">
+	<meta property="twitter:url" content="https://lukas.sh">
 	<meta property="twitter:title" content="Lukas portfolio">
 	<meta property="twitter:description" content="Lukas van den Berk a developer his portfolio site">
 	<meta property="twitter:image" content="/favicon.png">
@@ -141,7 +117,7 @@
 	<section class="group">
 		<section class="img">
 			<Card>
-				<div class="profile-img-container">
+				<div class="header-height">
 					<div class="profile-img">
 						<Img src="favicon.png" alt="my-head" />
 					</div>
@@ -151,22 +127,23 @@
 		</section>
 		<section class="about">
 			<Card>
-				<h2>Hello, I am Lukas van den Berk</h2>
-				<h2>I am a developer but also a...</h2>
-				<div class="spacing">
-					<AboutMeManager />
+				<div class="header-height">
+					<h2>Hello, I am Lukas van den Berk</h2>
+					<h2>And I am a:</h2>
+					<div class="spacing">
+						<AboutMeManager />
+					</div>
+					<h2>About me</h2>
+					<p>
+						Hi there my name is Lukas van den Berk a {age} year old software engineer from the Netherlands.
+						I Am currently following a eduction in Software Development at Hogeschool Leiden (will be done in 2023).
+						Below you will find some projects that I have done (in my freetime) to give you a idea of what I am capable of and what my interests are.
+						<br>For exact skills check my Linkedin in on the left.
+					</p>
+					<p>
+						The source code of this project is available on <a href="https://github.com/lukasvdberk/portfolio-site">github</a>
+					</p>
 				</div>
-			</Card>
-		</section>
-		<section class="about end">
-			<Card>
-				<h2>About me</h2>
-				<p>
-					Hi there my name is Lukas van den Berk a {age} year old software engineer from the Netherlands. Currently following a eduction in Software Development at Hogeschool leiden (will be done in 2023). I like to write scripts create websites/apps and work with new technologies in general. Below you will find some projects that I have done (in my freetime) to give you a idea of what I am capable of and what my interests are. <br>For exact skills check my Linkedin in on the left.
-				</p>
-				<p>
-					The source code of this project is available on <a href="https://github.com/lukasvdberk/portfolio-site">github</a>
-				</p>
 			</Card>
 		</section>
 	</section>
