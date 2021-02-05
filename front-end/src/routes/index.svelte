@@ -42,7 +42,7 @@
 	}
 
 	.header-height, .img, .about {
-		height: 45vh;
+		height: 48vh;
 	}
 
 	.projects {
