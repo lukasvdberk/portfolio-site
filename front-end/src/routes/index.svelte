@@ -21,22 +21,11 @@
 		text-align: center;
 	}
 
-	.group-about {
-		height: 60vh;
-	}
-
 	.img {
 		display: block;
 		position: relative;
-		width: 30%;
+		width: calc(30% + 20px);
 		float: left;
-	}
-
-	.group {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: auto;
 	}
 
 	.spacing {
@@ -52,22 +41,22 @@
 		float: right;
 	}
 
-	.header-height {
+	.header-height, .img, .about {
 		height: 45vh;
 	}
 
 	.projects {
 		display: block;
 		width: 100%;
-		margin-top: 5%;
+		padding-top: 20% !important;
 	}
 
 	p, h2 {
 		padding: 1%;
 	}
 
-	ul, li, p{
-		text-align: left;
+	.projects > h2 {
+		margin-top: 25vh;
 	}
 
 	.profile-img {
@@ -75,15 +64,11 @@
 	}
 
 	@media (max-width: 800px) {
-		.group {
-			height: auto;
-		}
-
 		.profile-img {
 			display: none;
 		}
 
-		.group, .projects, .about, .img {
+		.projects, .about, .img {
 			display: block;
 			position: relative;
 			width: 100%;
@@ -114,44 +99,40 @@
 </svelte:head>
 
 <Container>
-	<section class="group">
-		<section class="img">
-			<Card>
-				<div class="header-height">
-					<div class="profile-img">
-						<Img src="favicon.png" alt="my-head" />
-					</div>
-					<ContactManager />
+	<section class="img">
+		<Card>
+			<div class="header-height">
+				<div class="profile-img">
+					<Img src="favicon.png" alt="my-head" />
 				</div>
-			</Card>
-		</section>
-		<section class="about">
-			<Card>
-				<div class="header-height">
-					<h2>Hello, I am Lukas van den Berk</h2>
-					<h2>And I am a:</h2>
-					<div class="spacing">
-						<AboutMeManager />
-					</div>
-					<h2>About me</h2>
-					<p>
-						Hi there my name is Lukas van den Berk a {age} year old software engineer from the Netherlands.
-						I Am currently following a eduction in Software Development at Hogeschool Leiden (will be done in 2023).
-						Below you will find some projects that I have done (in my freetime) to give you a idea of what I am capable of and what my interests are.
-						<br>For exact skills check my Linkedin in on the left.
-					</p>
-					<p>
-						The source code of this project is available on <a href="https://github.com/lukasvdberk/portfolio-site">github</a>
-					</p>
-				</div>
-			</Card>
-		</section>
+				<ContactManager />
+			</div>
+		</Card>
 	</section>
-	<section class="group">
-		<section class="projects">
-			<h2>Projects</h2>
-			<ProjectManager />
-		</section>
+	<section class="about">
+		<Card>
+			<div class="header-height">
+				<h2>Hello, I am Lukas van den Berk</h2>
+				<h2>And I am a:</h2>
+				<div class="spacing">
+					<AboutMeManager />
+				</div>
+				<h2>About me</h2>
+				<p>
+					Hi there my name is Lukas van den Berk a {age} year old software engineer from the Netherlands.
+					I Am currently following a eduction in Software Development at Hogeschool Leiden (will be done in 2023).
+					Below you will find some projects that I have done (in my freetime) to give you a idea of what I am capable of and what my interests are.
+					<br>For exact skills check my Linkedin in on the left.
+				</p>
+				<p>
+					The source code of this project is available on <a href="https://github.com/lukasvdberk/portfolio-site">github</a>
+				</p>
+			</div>
+		</Card>
+	</section>
+	<section class="projects">
+		<h2>Projects</h2>
+		<ProjectManager />
 	</section>
 </Container>
 
