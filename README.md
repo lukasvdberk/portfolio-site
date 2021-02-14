@@ -23,6 +23,5 @@ IS_LIVE=false
 To run this project make sure docker and docker-compose is installed.
 Simply then run
 ```bash
-docker-compose up --build
+docker-compose up
 ```
-The build flag is for building and is only needed the first time.
