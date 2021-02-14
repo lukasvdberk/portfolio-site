@@ -22,7 +22,6 @@
         float:left;
         height: 30px;
         width: 30px;
-        margin-left: 10px;
         border-radius: 10%;
     }
 </style>

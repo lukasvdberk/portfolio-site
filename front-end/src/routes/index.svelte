@@ -21,13 +21,6 @@
 		text-align: center;
 	}
 
-	.img {
-		display: block;
-		position: relative;
-		width: calc(30% + 20px);
-		float: left;
-	}
-
 	.spacing {
 		padding: 2%;
 		display: flex;
@@ -35,49 +28,52 @@
         align-items: center;
 	}
 
-	.about {
-		position: relative;
-		width: 65%;
-		float: right;
-	}
-
-	.header-height, .img, .about {
+	.header-height {
 		height: 48vh;
+		margin-right: 2.5%;
+		width: 100%;
 	}
 
 	.projects {
 		display: block;
 		width: 100%;
-		padding-top: 20% !important;
 	}
 
 	p, h2 {
 		padding: 1%;
 	}
 
-	.projects > h2 {
-		margin-top: 25vh;
+	.contacts {
+		margin-left: 2.5%;
+		display: inline-block;
+		width: 27.5%;
+		float: left;
 	}
 
-	.profile-img {
-		height: 60%;
+	.about-me {
+		display: inline-block;
+		width: 70%;
 	}
 
-	@media (max-width: 800px) {
-		.profile-img {
+	@media (max-width: 1000px) {
+		.contacts {
 			display: none;
 		}
 
-		.projects, .about, .img {
-			display: block;
-			position: relative;
+		.about-me {
 			width: 100%;
-			float: none;
-			margin-top: 5%;
 		}
 
 		.header-height {
 			height: auto;
+		}
+
+		.projects {
+			display: block;
+			position: relative;
+			width: 100%;
+			float: none;
+			margin: 0;
 		}
 	}
 </style>
@@ -99,34 +95,32 @@
 </svelte:head>
 
 <Container>
-	<section class="img">
+	<section class="header-height">
 		<Card>
 			<div class="header-height">
-				<div class="profile-img">
-					<Img src="favicon.png" alt="my-head" />
+				<div class="contacts">
+					<div style="width: 60%">
+						<Img src="favicon.png" alt="my-head" />
+					</div>
+					<ContactManager />
 				</div>
-				<ContactManager />
-			</div>
-		</Card>
-	</section>
-	<section class="about">
-		<Card>
-			<div class="header-height">
-				<h2>Hello, I am Lukas van den Berk</h2>
-				<h2>And I am a:</h2>
-				<div class="spacing">
-					<AboutMeManager />
+				<div class="about-me">
+					<h2>Hello, I am Lukas van den Berk</h2>
+					<h2>And I am a:</h2>
+					<div class="spacing">
+						<AboutMeManager />
+					</div>
+					<h2>About me</h2>
+					<p>
+						Hi there my name is Lukas van den Berk a {age} year old software engineer from the Netherlands.
+						I Am currently following an eduction in Software Development at Hogeschool Leiden (will be done in 2023).
+						Below you will find some projects that I have done (in my freetime) to give you a idea of what I am capable of and what my interests are.
+						<br>For exact skills check my Linkedin in on the left.
+					</p>
+					<p>
+						The source code of this project is available on <a href="https://github.com/lukasvdberk/portfolio-site">github</a>
+					</p>
 				</div>
-				<h2>About me</h2>
-				<p>
-					Hi there my name is Lukas van den Berk a {age} year old software engineer from the Netherlands.
-					I Am currently following a eduction in Software Development at Hogeschool Leiden (will be done in 2023).
-					Below you will find some projects that I have done (in my freetime) to give you a idea of what I am capable of and what my interests are.
-					<br>For exact skills check my Linkedin in on the left.
-				</p>
-				<p>
-					The source code of this project is available on <a href="https://github.com/lukasvdberk/portfolio-site">github</a>
-				</p>
 			</div>
 		</Card>
 	</section>

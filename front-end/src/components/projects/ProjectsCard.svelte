@@ -24,14 +24,15 @@
         margin: 0;
         padding: 0;
     }
+
     h1 {
         text-align: center;
     }
 
     div.tag {
         display: inline-block;
-        width: 150px;
-        margin: 5px;
+        width: 100px;
+        margin: 1px;
     }
 
     a, a::after {
@@ -46,6 +47,13 @@
         margin: 0 auto;
         text-align: center;
         align-content: center;
+    }
+
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 </style>
 <article>

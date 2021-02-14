@@ -14,19 +14,17 @@
         text-align: center;
     }
 
-    h3 {
-        /*margin: 2%;*/
-        /*padding: 2%;*/
-        font-size: 20px;
+    h4 {
+        font-size: 16px;
         padding-top: 10px;
     }
 
     img {
-        width: 30px;
-        height: 30px;
+        width: 15px;
+        height: 15px;
     }
 
-    h3, img {
+    h4, img {
         display: inline-block !important;
         vertical-align: middle;
     }
@@ -49,5 +47,5 @@
     {#if icon}
         <img src={icon} alt="txt" />
     {/if}
-    <h3>{txt}</h3>
+    <h4>{txt}</h4>
 </div>

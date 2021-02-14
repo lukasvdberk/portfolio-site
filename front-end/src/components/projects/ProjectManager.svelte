@@ -37,5 +37,5 @@
 	</form>
 	<ProjectCardList {projects} />
 {:else}
-    <p>Please stand by projects loading......</p>
+    <p>Please stand by, projects loading......</p>
 {/if}

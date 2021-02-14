@@ -6,7 +6,6 @@ Technology used for this project
 - Django as a rest api for the backend
 - Svelte with sapper for the front-end
 - Docker with docker-compose to easily host and develop the site
-- Cloudflare for routing
 - Google analytics
 - Ubuntu for the VM that runs this website (on my home server)
 

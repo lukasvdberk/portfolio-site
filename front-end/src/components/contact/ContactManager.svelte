@@ -13,6 +13,10 @@
         position: relative;
         margin-top: 2.5%;
     }
+
+    h1 {
+        text-align: left;
+    }
 </style>
 
 <h1>Contact me at</h1>
