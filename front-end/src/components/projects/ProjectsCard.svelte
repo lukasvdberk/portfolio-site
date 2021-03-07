@@ -58,8 +58,10 @@
 </style>
 <article>
     <div class="img">
-        {#if images[0]["image"]}
+        {#if images.length > 0}
             <Img src={images[0]["image"]} alt={title} />
+        {:else}
+            <Img src="no-image-available.png" alt={title} />
         {/if}
     </div>
     <h1>{title}</h1>
