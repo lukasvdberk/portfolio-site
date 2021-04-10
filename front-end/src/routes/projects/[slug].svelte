@@ -63,8 +63,6 @@
 		<br>
 		<a href="{projectData.github_link}">Github link</a>
 		<p>Started project around: {projectData.date}</p>
-
-
 		{@html mainTextHtml}
 	</Container>
 {/if}
