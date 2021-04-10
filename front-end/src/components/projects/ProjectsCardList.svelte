@@ -9,6 +9,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 25px;
+        justify-content: space-evenly;
     }
 
     @media only screen and (max-width: 1200px) {

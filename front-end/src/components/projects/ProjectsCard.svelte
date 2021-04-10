@@ -45,6 +45,7 @@
 
     div.no-image {
         opacity: 0.4;
+        width: 100%;
     }
 
     a, a::after {

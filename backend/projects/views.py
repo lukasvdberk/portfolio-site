@@ -1,12 +1,9 @@
-from django.shortcuts import render
-
 # Create your views here.
-from rest_framework import mixins
 from rest_framework import generics
-from rest_framework import filters
+from rest_framework.pagination import PageNumberPagination
+
 from .models import Project
 from .serializers import ProjectSerializer
-from rest_framework.pagination import PageNumberPagination
 
 
 class ProjectList(generics.ListAPIView):
@@ -14,7 +11,9 @@ class ProjectList(generics.ListAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     pagination_class = PageNumberPagination
-    ordering_fields = ['size']
+
+    def get_queryset(self):
+        return self.queryset.order_by('-date')
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
