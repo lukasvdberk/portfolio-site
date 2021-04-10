@@ -29,7 +29,7 @@
 	}
 
 	.header-height {
-		height: 48vh;
+		min-height: 48vh;
 		margin-right: 2.5%;
 		width: 100%;
 	}
@@ -55,9 +55,25 @@
 		width: 70%;
 	}
 
+	.icon {
+		width: 60%;
+	}
+
 	@media (max-width: 1000px) {
-		.contacts {
+		.icon {
 			display: none;
+		}
+
+		.contact-manager {
+			width: 40%;
+			margin: 0 auto;
+		}
+
+		.contacts {
+			position: relative;
+			display: block;
+			width: 100%;
+			margin-bottom: 25px;
 		}
 
 		.about-me {
@@ -74,6 +90,12 @@
 			width: 100%;
 			float: none;
 			margin: 0;
+		}
+	}
+	@media (max-width: 450px) {
+		.contact-manager {
+			width: 50%;
+			margin: 0 auto;
 		}
 	}
 </style>
@@ -99,10 +121,12 @@
 		<Card>
 			<div class="header-height">
 				<div class="contacts">
-					<div style="width: 60%">
+					<div class="icon">
 						<Img src="favicon.png" alt="my-head" />
 					</div>
-					<ContactManager />
+					<div class="contact-manager">
+						<ContactManager />
+					</div>
 				</div>
 				<div class="about-me">
 					<h2>Hello, I am Lukas van den Berk</h2>
@@ -113,9 +137,10 @@
 					<h2>About me</h2>
 					<p>
 						Hi there my name is Lukas van den Berk a {age} year old software engineer from the Netherlands.
-						I Am currently following an eduction in Software Development at Hogeschool Leiden (will be done in 2023).
-						Below you will find some projects that I have done (in my freetime) to give you a idea of what I am capable of and what my interests are.
-						<br>For exact skills check my Linkedin in on the left.
+						I am currently following an eduction in Software Development at Hogeschool Leiden (will be done in 2023).
+						Below you will find some projects that I have done (in my freetime) to give you an idea of what I am capable of and what my interests are.
+						<br>
+						For exact skills check my LinkedIn in on the left.
 					</p>
 					<p>
 						The source code of this project is available on <a href="https://github.com/lukasvdberk/portfolio-site">github</a>
