@@ -17,6 +17,7 @@
         text-align: left;
         padding: 5px;
     }
+
     div.img {
         position: relative;
         height: 350px;
@@ -29,10 +30,21 @@
         text-align: center;
     }
 
+    div.tag-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
     div.tag {
         display: inline-block;
         width: 100px;
         margin: 1px;
+    }
+
+    div.no-image {
+        opacity: 0.4;
     }
 
     a, a::after {
@@ -61,15 +73,19 @@
         {#if images.length > 0}
             <Img src={images[0]["image"]} alt={title} />
         {:else}
-            <Img src="no-image-available.png" alt={title} />
+            <div class="no-image">
+                <Img src="no-image-available.png" alt={title} />
+            </div>
         {/if}
     </div>
     <h1>{title}</h1>
-    {#each tags as tag}
-        <div class="tag">
-            <Tag txt={tag.name} icon="{tag.icon}" timing="0" />
-        </div>
-    {/each}
+    <div class="tag-container">
+        {#each tags as tag}
+            <div class="tag">
+                <Tag txt={tag.name} icon="{tag.icon}" timing="0" />
+            </div>
+        {/each}
+    </div>
     <p>{shortDescription}</p>
     <a href="/projects/{slug}">Learn more</a>
 </article>
