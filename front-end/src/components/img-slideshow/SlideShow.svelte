@@ -44,7 +44,7 @@
 
     img {
         width: 100%;
-        height: 30vh;
+        height: 60vh;
         object-fit: scale-down;
     }
 
