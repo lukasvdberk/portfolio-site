@@ -26,7 +26,7 @@
         padding: 0;
     }
 
-    h1 {
+    h1, p {
         text-align: center;
     }
 
@@ -59,7 +59,12 @@
         text-decoration: none;
         margin: 0 auto;
         text-align: center;
+        transition: 1s;
         align-content: center;
+    }
+
+    a:hover {
+        background-color: lightblue;
     }
 
     p {
