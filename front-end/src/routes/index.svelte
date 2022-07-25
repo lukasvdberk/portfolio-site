@@ -17,6 +17,27 @@
 </script>
 
 <style>
+	.background-backdrop {	
+		position: fixed;
+		width: 40vh;
+		height: 100vh;
+		background-color: #001021;
+		background-size: cover;
+	}
+
+	.background-backdrop-left {
+		/* clip-path: polygon(0% 100%, 100% 100%, 0% 0%); */
+		clip-path: polygon(0 0, 20% 0, 60% 100%, 0% 100%);
+		left: 0%;
+	}
+
+	.background-backdrop-right {
+		top: 0;
+		right: 0;
+		/* clip-path: polygon(100% 0, 0 0, 100% 100%); */
+		clip-path: polygon(40% 0, 100% 0, 100% 100%, 80% 100%);
+	}
+
 	section {
 		text-align: center;
 	}
@@ -58,8 +79,17 @@
 	.icon {
 		width: 60%;
 	}
+	@media (max-width: 1400px) {
+		.background-backdrop {
+			width: 25vh;
+		}
+	}
 
 	@media (max-width: 1000px) {
+		.background-backdrop {
+			width: 0vh;
+		}
+
 		.icon {
 			display: none;
 		}
@@ -116,6 +146,8 @@
 	<meta property="twitter:image" content="/favicon.png">
 </svelte:head>
 
+<div class="background-backdrop background-backdrop-left"></div>
+<div class="background-backdrop background-backdrop-right"></div>
 <Container>
 	<section class="header-height">
 		<Card>
