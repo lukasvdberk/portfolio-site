@@ -24,10 +24,23 @@
         width: 30px;
         border-radius: 10%;
     }
+
+    @media (max-width: 1000px) {
+        .container {
+            margin: 0 auto;
+        }
+
+        a {
+            vertical-align: top;
+        }
+
+        a, img {
+            text-align: center;
+            float: none;
+        }
+    }
 </style>
 <div class="container">
     <img src="{contact.img}" alt={contact.name} />
-    <div>
-        <a href="{contact.link}">Contact me at {contact.name}</a>
-    </div>
+    <a href="{contact.link}">Contact me at {contact.name}</a>
 </div>

@@ -17,6 +17,12 @@
     h1 {
         text-align: left;
     }
+
+    @media (max-width: 1000px) {
+        h1 {
+            text-align: center;
+        }
+    }
 </style>
 
 <h1>Contact me at</h1>
