@@ -81,15 +81,11 @@
 	}
 	@media (max-width: 1400px) {
 		.background-backdrop {
-			width: 25vh;
+			width: 0vh;
 		}
 	}
 
 	@media (max-width: 1000px) {
-		.background-backdrop {
-			width: 0vh;
-		}
-
 		.icon {
 			display: none;
 		}
